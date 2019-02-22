@@ -1,0 +1,216 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	counter-reset: score;
+	text-align: center;
+	background: #dddddd;
+	color: #333;
+}
+
+.total-count::after {
+  content: counter(score);
+}
+
+.game-area {
+	display: flex;
+	flex-flow: wrap;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 600px;
+	min-height: 550px;
+	max-height: 700px;
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+li {
+	width: calc(33% - .5em);
+	margin-bottom: 1em;
+	height: 10em;
+	list-style-type: none;
+	position: relative;
+	outline: 4px solid white;
+	background: #64ddf3;
+}
+
+li:nth-child(1) input {
+	filter: brightness(1.17754);
+	animation-duration: 1.34747s;
+}
+
+li:nth-child(2) input {
+	filter: hue-rotate(311.17465deg) brightness(1.90611);
+	animation-duration: 2.25788s;
+}
+
+li:nth-child(3) input {
+	filter: hue-rotate(108.56915deg) brightness(1.6645);
+	animation-duration: 1.11843s;
+}
+
+li:nth-child(4) input {
+	filter: hue-rotate(50.71021deg) brightness(1.75858);
+	animation-duration: 1.20623s;
+}
+
+li:nth-child(5) input {
+	filter: hue-rotate(159.7982deg) brightness(1.84696);
+	animation-duration: 2.94176s;
+}
+
+li:nth-child(6) input {
+	filter: hue-rotate(1.79974deg) brightness(1.74717);
+	animation-duration: 4.40492s;
+}
+
+li:nth-child(7) input {
+	filter: hue-rotate(118.33081deg) brightness(1.75943);
+	animation-duration: 4.96055s;
+}
+
+li:nth-child(8) input {
+	filter: hue-rotate(94.16881deg) brightness(1.48042);
+	animation-duration: 4.31116s;
+}
+
+li:nth-child(9) input {
+	filter: hue-rotate(15.9857deg) brightness(1.09075);
+	animation-duration: 0.45601s;
+}
+
+input[type="checkbox"] {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	cursor: crosshair;
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin: 0 auto;
+	appearance: none;
+	border: 6px solid red;
+	animation: hide-target infinite alternate ease-in-out;
+}
+
+input[type="checkbox"]:before {
+  content: '';
+  display: block;
+  background: radial-gradient(red 10%, white 10%, white 30%, red 30%, red 50%, white 50%, white 80%, red 80%, red 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+input[type="checkbox"]:focus {
+	outline: none;
+	appearance: none;
+}
+
+input[type="checkbox"]:checked {
+	pointer-events: none;
+	filter: grayscale(1) opacity(0.75);
+  animation: none;
+}
+
+input[type="checkbox"]:checked:after {
+content: 'HIT!';
+padding: .5em;
+margin: 0 0 0 -0.7em;
+font-size: 2.5em;
+font-weight: 600;
+}
+
+input[type="checkbox"]::after {
+counter-increment: score;
+}
+
+.shield {
+	background: repeating-linear-gradient(-45deg, #ffff00 0, #00ffff 5em, #ff00ff 5em, #20c0ff 10em);
+	width: 100%;
+	height: 30%;
+	margin: 0 auto;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	pointer-events: all;
+	z-index: 100;
+}
+
+.gameoo {
+	display: flex;
+	flex-flow: wrap;
+	margin: 0 auto;
+	padding-left: 0;
+	width: calc(33% - .5em);
+	margin-bottom: 1em;
+	height: 10em;
+	list-style-type: none;
+	position: relative;
+	outline: 4px solid white;
+	background: #ffffff;
+}
+
+.game-over {
+	height: 100%;
+	width: 100%;
+	pointer-events: all;
+	position: absolute;
+	top: -100%;
+	left: 0;
+	z-index: 200;
+	animation: appear .25s forwards;
+	animation-delay: 4s;
+	background: repeating-radial-gradient(#c9ff00 0, #c9ff00 5em, #20c0ff 5em, #20c0ff 10em);
+}
+
+.play-again {
+	color: #444444;
+	padding: .5em 1em;
+	font-size: 1.5em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 700;
+}
+
+.total-count {
+	font-size: 1.75em;
+	top: 1.75em;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	z-index: 300;
+}
+
+@keyframes hide-target {
+	0% {
+		top: 0;
+	}
+
+	25% {
+		top: calc(70% - 6px);
+	}
+
+	100% {
+		top: 0;
+	}
+}
+
+@keyframes appear {
+	from {
+		top: -100vh;
+		opacity: 0;
+	}
+
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
