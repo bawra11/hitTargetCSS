@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hit The Target</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+<body>
+  <h1>Hit The Target</h1>
+  <div class="game-over">
+    <div class="gameoo">
+      <h1>Game Over!</h1>
+      <h3 class="total-count">Targets Hit: &nbsp;</h3>
+      <a class="play-again" href="hit_the_target.html">Play Again</a>
+    </div>
+  </div>
+  <ul class="game-area">
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+    <li><input type="checkbox"><div class="shield"></div></li>
+  </ul>
+</body>
+</html>
